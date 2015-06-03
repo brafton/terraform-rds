@@ -38,10 +38,6 @@ variable "db_admin_password" {
   description = "The database admin password"
 }
 
-variable "vpc_subnet_ids" {
-  description = "The VPC subnet IDs. This should be comma separated"
-}
-
 variable "db_parameter_group" {
   description = "The name of the parameter group for the database"
   default = "default.mysql5.6"
@@ -72,8 +68,15 @@ variable "db_engine" {
   default = "mysql"
 }
 
-
 variable "db_identifer_suffix" {
   description = "A value to append to the RDS identifer to create a unique name"
   default = "rds-database"
+}
+
+variable "vpc_id" {
+  description = "The ID of the VPC to put the RDS instance into"
+}
+
+variable "vpc_subnet_ids" {
+  description = "The VPC subnet IDs. This should be comma separated"
 }
